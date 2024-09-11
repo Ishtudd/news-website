@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily News Digest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            100: '#F6E6E4',
+                            200: '#E8CCCB',
+                            300: '#D9B0AD',
+                            400: '#C99491',
+                            500: '#B87875',
+                            600: '#A65D5A',
+                            700: '#8E4442',
+                            800: '#762D2B',
+                            900: '#5E1816',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-maroon-100 font-sans">
+    <header class="bg-maroon-800 text-maroon-100 py-8 mb-8 shadow-lg">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-2">Daily News Digest</h1>
+            <p class="text-xl text-maroon-200">Your concise source for top stories and diverse perspectives</p>
+        </div>
+    </header>
+    
+    <div class="container mx-auto px-4 py-8">
+        <main>
+            <article class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                <img src="/api/placeholder/800/400" alt="News story image" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-maroon-900 mb-3">Breaking: Major Scientific Discovery Announced</h2>
+                    <p class="text-maroon-800 mb-4">Scientists at a renowned research institute have made a groundbreaking discovery in the field of renewable energy, potentially revolutionizing how we power our world.</p>
+                    <div class="space-y-4">
+                        <div class="bg-maroon-200 p-4 rounded-lg border-l-4 border-maroon-600">
+                            <h3 class="font-semibold text-maroon-800 mb-2">Perspective 1:</h3>
+                            <p class="text-maroon-700 mb-2">This discovery could be the key to solving our energy crisis and combating climate change.</p>
+                            <div class="flex items-center">
+                                <button class="text-maroon-600 hover:text-maroon-800 transition-colors duration-200">
+                                    <i class="far fa-heart mr-1"></i> Like
+                                </button>
+                                <span class="text-maroon-600 ml-2">0 likes</span>
+                            </div>
+                        </div>
+                        <div class="bg-maroon-300 p-4 rounded-lg border-l-4 border-maroon-700">
+                            <h3 class="font-semibold text-maroon-900 mb-2">Perspective 2:</h3>
+                            <p class="text-maroon-800 mb-2">While promising, we need to consider the economic implications and potential job displacement in traditional energy sectors.</p>
+                            <div class="flex items-center">
+                                <button class="text-maroon-700 hover:text-maroon-900 transition-colors duration-200">
+                                    <i class="far fa-heart mr-1"></i> Like
+                                </button>
+                                <span class="text-maroon-700 ml-2">0 likes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                <img src="/api/placeholder/800/400" alt="News story image" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-maroon-900 mb-3">Tech Giant Unveils Revolutionary AI Assistant</h2>
+                    <p class="text-maroon-800 mb-4">A leading technology company has announced the launch of an advanced AI assistant, claiming it to be the most human-like interaction experience to date.</p>
+                    <div class="space-y-4">
+                        <div class="bg-maroon-200 p-4 rounded-lg border-l-4 border-maroon-600">
+                            <h3 class="font-semibold text-maroon-800 mb-2">Perspective 1:</h3>
+                            <p class="text-maroon-700 mb-2">This AI breakthrough could drastically improve productivity and accessibility in various sectors, from healthcare to education.</p>
+                            <div class="flex items-center">
+                                <button class="text-maroon-600 hover:text-maroon-800 transition-colors duration-200">
+                                    <i class="far fa-heart mr-1"></i> Like
+                                </button>
+                                <span class="text-maroon-600 ml-2">0 likes</span>
+                            </div>
+                        </div>
+                        <div class="bg-maroon-300 p-4 rounded-lg border-l-4 border-maroon-700">
+                            <h3 class="font-semibold text-maroon-900 mb-2">Perspective 2:</h3>
+                            <p class="text-maroon-800 mb-2">The rapid advancement of AI raises ethical concerns about privacy, job displacement, and the potential for misuse in decision-making processes.</p>
+                            <div class="flex items-center">
+                                <button class="text-maroon-700 hover:text-maroon-900 transition-colors duration-200">
+                                    <i class="far fa-heart mr-1"></i> Like
+                                </button>
+                                <span class="text-maroon-700 ml-2">0 likes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+    
+    <script>
+    document.querySelectorAll('button').forEach(button => {
+        let likes = 0;
+        button.addEventListener('click', () => {
+            likes++;
+            const likeCount = button.nextElementSibling;
+            likeCount.textContent = likes === 1 ? '1 like' : likes + ' likes';
+            button.innerHTML = '<i class="fas fa-heart mr-1"></i> Liked';
+            button.classList.add('text-red-500');
+        });
+    });
+    </script>
+</body>
+</html>
